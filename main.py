@@ -11,12 +11,17 @@ index = count()
 
 fig = plt.figure()
 ax = fig.add_subplot(projection='3d')
+
+
 def getData(i):
     ax.clear()
-    ax.set(xlim3d=(0, 2), xlabel='X')
-    ax.set(ylim3d=(0, 2), ylabel='Y')
+    ax.set(xlim3d=(0, 1), xlabel='X')
+    ax.set(ylim3d=(0, 1.5), ylabel='Y')
     ax.set(zlim3d=(0, 2), zlabel='Z')
     ax.set_title('Throwing Motion')
+    i = next(index)
+    i = next(index)
+    i = next(index)
     i = next(index)
     for j in range(10):
         graph = ax.scatter(data['X.' + str(j + 3)][i], data['Y.' + str(j + 3)][i],
@@ -24,6 +29,6 @@ def getData(i):
 
 
 ani = matplotlib.animation.FuncAnimation(fig, getData,
-                                         interval=10, blit=False)
+                                         interval=30, blit=False)
 
 plt.show()
